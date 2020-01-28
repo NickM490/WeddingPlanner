@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Wedding Planner</h1>
+    <hr>
+    <h2 class="display-5">Create a New Wedding</h2>
+    <hr>
+    <a href="dashboard" class="btn btn-primary">Dashboard</a> <a href="/logout" class="btn btn-danger">Log Out</a>
+    <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> -->
+</div>
+
+
+<div class="col-md-6 text-center" >
+        @model Wedding
+            <form asp-action="Create" asp-controller="Home" method="post">
+                
+                <span asp-validation-for="WedderOne"></span>
+                <label asp-for="WedderOne">Wedder One</label>
+                <input asp-for="WedderOne">
+        <hr>
+
+                <span asp-validation-for="WedderTwo"></span>
+                <label asp-for="WedderTwo">Wedder Two</label>
+                <input asp-for="WedderTwo">
+        <hr>
+
+                <span asp-validation-for="Date"></span>
+                <label asp-for="Date">Wedding Date</label>
+                <input type="date" asp-for="Date">
+        <hr>
+
+                <span asp-validation-for="Address"></span>
+                <label asp-for="Address">Wedding Address</label>
+                <input asp-for="Address">
+        <hr>
+
+                
+                <input value="Create Wedding" type="submit">    
+                
+            </form>
+
+        </div>
